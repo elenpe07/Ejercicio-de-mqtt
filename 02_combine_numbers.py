@@ -74,7 +74,7 @@ def on_log(mqttc, userdata, level, string):
 def main(broker):
     data = {'client':None,
             'broker': broker}
-    mqttc = Client(client_id="combine_numbers", userdata=data)
+    mqttc = Client(userdata=data)
     data['client'] = mqttc
     mqttc.enable_logger()
     mqttc.on_message = on_message
